@@ -3,10 +3,11 @@ defmodule LibraryApi.Library do
   alias LibraryApi.Library.Author
 
   def list_authors, do: Repo.all(Author)
+  # might have to replace next line with this -> def get_author!(id), do: Repo.get(Author, id)
   def get_author!(id), do: Repo.get!(Author, id)
 
   def create_author(attrs \\ %{}) do
-    $Author{}
+    %Author{}
     |> Author.changeset(attrs)
     |> Repo.insert
   end
