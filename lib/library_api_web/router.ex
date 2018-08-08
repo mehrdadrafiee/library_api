@@ -5,7 +5,8 @@ defmodule LibraryApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", LibraryApiWeb do
+  scope "/", LibraryApiWeb do
     pipe_through :api
+    get "/", StatusController, :index
   end
 end
